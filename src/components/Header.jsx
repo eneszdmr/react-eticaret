@@ -5,11 +5,11 @@ import { FiSun } from "react-icons/fi";
 import { IoMoonSharp } from "react-icons/io5";
 
 function Header() {
-  const [theme, setTheme] = useState(false);
+  const [theme, setTheme] = useState(true);
 
   const changeTheme = () => {
     const root = document.getElementById("root");
-    setTheme(!theme);
+
     if (theme) {
       root.style.backgroundColor = "black";
       root.style.color = "white";
@@ -17,6 +17,7 @@ function Header() {
       root.style.backgroundColor = "white";
       root.style.color = "black";
     }
+    setTheme(!theme);
   };
   return (
     <div
@@ -27,7 +28,7 @@ function Header() {
         justifyContent: "space-between",
       }}
     >
-      <div className="flex-row">
+      <div className="flex-row" style={{ cursor: "pointer" }}>
         <img className="logo" alt="logo" src="./src/images/logo.png" />
         <p className="logo-text">Enes A.Ş LTD</p>
       </div>

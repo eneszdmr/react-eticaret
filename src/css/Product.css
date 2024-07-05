@@ -1,0 +1,31 @@
+.image{
+    height: 240px;
+    width: 180px;
+}
+
+.card{
+    width: 200px;
+    height: 420px;
+    box-shadow:  1px 4px 3px lightgrey;
+    border-radius: 10px;
+    margin: 15px;
+
+}
+
+.card:hover{
+    box-shadow:  1px 4px 3px rgb(202, 96, 96);
+    transition: all 0.5;
+    cursor: pointer;
+}
+
+.button-detail{
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.button-detail:hover{
+    cursor: pointer;
+    background-color: blueviolet;
+    color: white;
+}

@@ -3,9 +3,12 @@ import "../css/Header.css";
 import { BsBasket } from "react-icons/bs";
 import { FiSun } from "react-icons/fi";
 import { IoMoonSharp } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
   const [theme, setTheme] = useState(true);
+
+  const navigate = useNavigate();
 
   const changeTheme = () => {
     const root = document.getElementById("root");
@@ -28,7 +31,11 @@ function Header() {
         justifyContent: "space-between",
       }}
     >
-      <div className="flex-row" style={{ cursor: "pointer" }}>
+      <div
+        className="flex-row"
+        style={{ cursor: "pointer" }}
+        onClick={() => navigate("/")}
+      >
         <img className="logo" alt="logo" src="./src/images/logo.png" />
         <p className="logo-text">Enes A.Ş LTD</p>
       </div>

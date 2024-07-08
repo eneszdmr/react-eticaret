@@ -1,0 +1,39 @@
+.product-box{
+    display: flex;
+    margin-top: 30px;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.desc{
+    font-family:'Times New Roman', Times, serif
+}
+
+.price{
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: red;
+}
+
+.plusandminus{
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+}
+
+.buttonSepeteEkle{
+    cursor: pointer;
+    margin-top: 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: darkslateblue;
+    color: white    ;
+    height: 50px;
+    width: 250px;
+    font-size: 20px;
+}
+
+.buttonSepeteEkle:hover{
+    background-color: darkorange;
+}

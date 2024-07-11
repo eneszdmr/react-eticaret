@@ -4,11 +4,15 @@ import { BsBasket } from "react-icons/bs";
 import { FiSun } from "react-icons/fi";
 import { IoMoonSharp } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
+import { Badge } from "@mui/material";
+import { useDispatch, useSelector } from "react-redux";
+import { setDrawer } from "../redux/slices/basketSlice";
 
 function Header() {
   const [theme, setTheme] = useState(true);
-
+  const { products } = useSelector((store) => store.basket);
   const navigate = useNavigate();
+  const dispatch = useDispatch()
 
   const changeTheme = () => {
     const root = document.getElementById("root");
@@ -48,8 +52,10 @@ function Header() {
           ) : (
             <FiSun className="icon" onClick={changeTheme} />
           )}
+          <Badge onClick={() => dispatch(setDrawer())} color="error" badgeContent={products.length}>
+            <BsBasket style={{ marginRight: "10px" }} className="icon" />
 
-          <BsBasket className="icon" />
+          </Badge>
         </div>
       </div>
     </div>

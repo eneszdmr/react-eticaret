@@ -5,6 +5,7 @@ import { setSelectedProduct } from "../redux/slices/productSlice";
 import "../css/ProductDetails.css";
 import { FaCirclePlus } from "react-icons/fa6";
 import { FaCircleMinus } from "react-icons/fa6";
+import { addToBasket, calculateTotalAmount } from "../redux/slices/basketSlice";
 
 function ProductDetails() {
   const { id } = useParams();
@@ -19,6 +20,19 @@ function ProductDetails() {
   useEffect(() => {
     getProductByID();
   }, []);
+
+  const addBasket = () => {
+    const payload = {
+      id,
+      title,
+      description,
+      price,
+      image,
+      count
+    }
+    dispatch(addToBasket(payload));
+    dispatch(calculateTotalAmount());
+  };
 
   const incremenet = () => {
     setCount(count + 1);
@@ -57,9 +71,7 @@ function ProductDetails() {
         </div>
         <div>
           <button
-            onClick={() => {
-              alert("hello");
-            }}
+            onClick={addBasket}
             className="buttonSepeteEkle"
           >
             Sepete Ekle
